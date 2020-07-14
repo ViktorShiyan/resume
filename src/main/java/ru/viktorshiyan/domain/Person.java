@@ -1,19 +1,34 @@
 package ru.viktorshiyan.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.Type;
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Person {
+    public Person() {
+        this.dateCreated = new Timestamp(new Date().getTime());
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String name;
 
+    private String soname;
+    @CreatedDate
+    private Timestamp dateCreated;
+
+    private Timestamp dateToBorn;
+
     private String email;
+    @Lob
+    @Column(length = 512)
+    private String description;
 
     public Integer getId() {
         return id;
@@ -31,11 +46,35 @@ public class Person {
         this.name = name;
     }
 
+    public String getSoname() {
+        return soname;
+    }
+
+    public void setSoname(String soname) {
+        this.soname = soname;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Timestamp getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Timestamp dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }
