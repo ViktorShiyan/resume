@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Date;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity
 public class Person {
     public Person() {
         this.dateCreated = new Timestamp(new Date().getTime());
