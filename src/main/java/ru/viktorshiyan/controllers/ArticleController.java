@@ -35,4 +35,5 @@ public class ArticleController {
     Iterable<Article> getAll() {
         return articleRepository.findAll();
     }
+
 }

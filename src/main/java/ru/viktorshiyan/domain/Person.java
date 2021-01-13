@@ -1,6 +1,6 @@
 package ru.viktorshiyan.domain;
 
-import org.hibernate.annotations.Type;
+
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -26,7 +26,6 @@ public class Person {
     private Timestamp dateToBorn;
 
     private String email;
-    @Lob
     @Column(length = 512)
     private String description;
 
