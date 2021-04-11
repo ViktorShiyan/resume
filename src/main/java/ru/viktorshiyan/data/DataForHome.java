@@ -9,14 +9,14 @@ import java.util.*;
  */
 @Component
 public class DataForHome {
-    Map dataMap = new HashMap();
+    Map<String, Object> dataMap = new HashMap<>();
 
     public DataForHome() {
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault(), Locale.getDefault());
         calendar.setTime(new Date());
         int currentYear = calendar.get(Calendar.YEAR);
         //Header
-        dataMap.put("stage", currentYear - 2017);
+        dataMap.put("stage", currentYear - 2019);
         dataMap.put("age", currentYear - 1991);
         dataMap.put("address", "644015 Omsk, Russia");
         dataMap.put("email", "me@viktorshiyan.ru");
@@ -25,7 +25,7 @@ public class DataForHome {
         dataMap.put("nation", "Russian");
     }
 
-    public Map getDataMap() {
+    public Map<String, Object> getDataMap() {
         return dataMap;
     }
 }

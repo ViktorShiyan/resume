@@ -348,81 +348,35 @@
             </div>
             <div class="row">
                 <!-- single education -->
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="education-content">
-                        <div class="period">
-                            <h3>2013 - 2018</h3>
+
+
+                {{#educations}}
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="education-content">
+                            <div class="period">
+                                <h3>{{yearStart}} - {{yearFinish}}</h3>
+                            </div>
+                            <ul class="ul-education">
+                                <li class="li-specialty">
+                                    <div class="specialty">
+                                        <span class="education-icon"><i class="fa fa-file-text"></i></span>
+                                        <span class="specialty-name">{{name}}</span>
+                                    </div>
+                                </li>
+                                <li class="li-university">
+                                    <div class="university">
+                                        <span class="education-icon"><i class="fa fa-university"></i></span>
+                                        <span class="university-name">{{place}}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p class="prg-education">{{description}}</p>
                         </div>
-                        <ul class="ul-education">
-                            <li class="li-specialty">
-                                <div class="specialty">
-                                    <span class="education-icon"><i class="fa fa-file-text"></i></span>
-                                    <span class="specialty-name">Bachelor of Engineering (B.Eng.)</span>
-                                </div>
-                            </li>
-                            <li class="li-university">
-                                <div class="university">
-                                    <span class="education-icon"><i class="fa fa-university"></i></span>
-                                    <span class="university-name">Omsk State Technical University</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <p class="prg-education">Omsk State Technical University (OmSTU) is a scientific-technological
-                            university which trains engineers, economists and classical scholars.The University has
-                            always focused on the quality and innovation of its teaching and research developing.</p>
                     </div>
-                </div>
+                {{/educations}}
+
+
                 <!-- / single education -->
-                <!-- single education -->
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="education-content">
-                        <div class="period">
-                            <h3>2008 - 2012</h3>
-                        </div>
-                        <ul class="ul-education">
-                            <li class="li-specialty">
-                                <div class="specialty">
-                                    <span class="education-icon"><i class="fa fa-file-text"></i></span>
-                                    <span class="specialty-name">Radio engineer</span>
-                                </div>
-                            </li>
-                            <li class="li-university">
-                                <div class="university">
-                                    <span class="education-icon"><i class="fa fa-university"></i></span>
-                                    <span class="university-name">Omsk Flight Technical College of Civil Aviation named after A.V. Lyapidevsky</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <p class="prg-education">Civil Aviation School, which graduates from the best engineers in the
-                            field of ATSEP (Air Traffic Safety Electronic Personnel) in Russia.</p>
-                    </div>
-                </div>
-                <!-- / single education -->
-                <!-- single education -->
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="education-content">
-                        <div class="period">
-                            <h3>1998 - 2008</h3>
-                        </div>
-                        <ul class="ul-education">
-                            <li class="li-specialty">
-                                <div class="specialty">
-                                    <span class="education-icon"><i class="fa fa-file-text"></i></span>
-                                    <span class="specialty-name">Educated person</span>
-                                </div>
-                            </li>
-                            <li class="li-university">
-                                <div class="university">
-                                    <span class="education-icon"><i class="fa fa-university"></i></span>
-                                    <span class="university-name">High School No. 105 named after Hero of the Soviet Union N.P. Budarina</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <p class="prg-education">The upbringing of a free, creatively thinking, widely educated person -
-                            a citizen of the world, self-confident, open to people, able to be happy in life and succeed
-                            in business.</p>
-                    </div>
-                </div>
                 <!-- / single education -->
                 <div class="clearfix"></div>
                 <!-- single education -->
@@ -552,51 +506,51 @@
         </section>
 
         <!-- #BLOG# -->
-<!--        <section id="blog" class="section section-blog wow fadeInUp" data-wow-offset="40">
-            <div class="header-section">
-                <h2 class="h2-section">BLOG</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="blog-content">
-                        <img src="http://placehold.it/470x300" alt="">
-                        <div class="blog-detail">
-                            <h4><a href="#">PHOTO</a> / <a href="#">DESIGN</a> / <a href="#">DEV</a></h4>
-                            <h3><a href="single-blog.html">HERE GOES AN AWESOME BLOG TITLE</a></h3>
-                            <ul class="ul-detail">
-                                <li><i class="fa fa-user-o"></i>Robert Smith</li>
-                                <li><i class="fa fa-calendar-check-o"></i>Nov 12</li>
-                                <li><i class="fa fa-comments-o"></i>46</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-                            <a href="single-blog.html"><span class="read-more">READ MORE</span></a>
+        <!--        <section id="blog" class="section section-blog wow fadeInUp" data-wow-offset="40">
+                    <div class="header-section">
+                        <h2 class="h2-section">BLOG</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="blog-content">
+                                <img src="http://placehold.it/470x300" alt="">
+                                <div class="blog-detail">
+                                    <h4><a href="#">PHOTO</a> / <a href="#">DESIGN</a> / <a href="#">DEV</a></h4>
+                                    <h3><a href="single-blog.html">HERE GOES AN AWESOME BLOG TITLE</a></h3>
+                                    <ul class="ul-detail">
+                                        <li><i class="fa fa-user-o"></i>Robert Smith</li>
+                                        <li><i class="fa fa-calendar-check-o"></i>Nov 12</li>
+                                        <li><i class="fa fa-comments-o"></i>46</li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
+                                    <a href="single-blog.html"><span class="read-more">READ MORE</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="blog-content">
+                                <img src="http://placehold.it/470x300" alt="">
+                                <div class="blog-detail">
+                                    <h4><a href="#">PHOTO</a> / <a href="#">DESIGN</a> / <a href="#">DEV</a></h4>
+                                    <h3><a href="single-blog.html">HERE GOES AN AWESOME BLOG TITLE</a></h3>
+                                    <ul class="ul-detail">
+                                        <li><i class="fa fa-user-o"></i>Robert Smith</li>
+                                        <li><i class="fa fa-calendar-check-o"></i>Nov 12</li>
+                                        <li><i class="fa fa-comments-o"></i>46</li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
+                                    <a href="single-blog.html"><span class="read-more">READ MORE</span></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="blog-content">
-                        <img src="http://placehold.it/470x300" alt="">
-                        <div class="blog-detail">
-                            <h4><a href="#">PHOTO</a> / <a href="#">DESIGN</a> / <a href="#">DEV</a></h4>
-                            <h3><a href="single-blog.html">HERE GOES AN AWESOME BLOG TITLE</a></h3>
-                            <ul class="ul-detail">
-                                <li><i class="fa fa-user-o"></i>Robert Smith</li>
-                                <li><i class="fa fa-calendar-check-o"></i>Nov 12</li>
-                                <li><i class="fa fa-comments-o"></i>46</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...</p>
-                            <a href="single-blog.html"><span class="read-more">READ MORE</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <div class="load-more">
-                 <a href="/"><span>LOAD MORE</span></a>
-             </div>
-        </section>
-   -->
+                     <div class="load-more">
+                         <a href="/"><span>LOAD MORE</span></a>
+                     </div>
+                </section>
+           -->
         <!-- #CONTACT_US# -->
         <section id="contact-us" class="section section-contact-us wow fadeInUp" data-wow-offset="40">
             <div class="header-section">

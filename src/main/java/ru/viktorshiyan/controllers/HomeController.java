@@ -1,26 +1,24 @@
 package ru.viktorshiyan.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.http.MediaType;
+import lombok.AllArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ru.viktorshiyan.data.DataForHome;
-import ru.viktorshiyan.data.Sender;
+import ru.viktorshiyan.domain.Education;
+import ru.viktorshiyan.repos.EducationRepository;
 
 import java.util.*;
 
 @Controller
+@AllArgsConstructor
 public class HomeController {
 
-    @Autowired
-    DataForHome dataForHome;
-    @Autowired
-    private JavaMailSender emailSender;
-    @Autowired
-    private ApplicationContext applicationContext;
+
+    private final DataForHome dataForHome;
+    private final JavaMailSender emailSender;
+    private final EducationRepository educationRepository;
 
     @PostMapping(value = "message")
     public @ResponseBody
@@ -45,6 +43,10 @@ public class HomeController {
     public String main(Map<String, Object> model) {
         model.put("some", "MAIN");
         model.putAll(dataForHome.getDataMap());
+        List<Education> educationList = new ArrayList<>();
+        educationRepository.findAll().forEach(educationList::add);
+        educationList.sort(Comparator.comparing(Education::getYearStart));
+        model.put("educations", educationList);
         return "index";
     }
 
