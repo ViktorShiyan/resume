@@ -36,7 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/cv/**")
                 .antMatchers("/js/**")
                 .antMatchers("/images/**")
-                .antMatchers("/fonts/**");
+                .antMatchers("/fonts/**")
+                .antMatchers("/message");
     }
 
     @Override

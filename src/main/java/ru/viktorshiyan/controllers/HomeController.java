@@ -1,6 +1,7 @@
 package ru.viktorshiyan.controllers;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -14,9 +15,10 @@ import ru.viktorshiyan.repos.ExperinceRepository;
 import java.util.*;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class HomeController {
-
+    @Value("${email.send}")
+    private String fromMail;
 
     private final DataForHome dataForHome;
     private final JavaMailSender emailSender;
@@ -28,7 +30,7 @@ public class HomeController {
     String message(@RequestParam String name, @RequestParam String email, @RequestParam String message) {
         System.out.println("Success");
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-        simpleMailMessage.setFrom("resume@viktorshiyan.ru");
+        simpleMailMessage.setFrom(fromMail);
         simpleMailMessage.setTo("me@viktorshiyan.ru");
         simpleMailMessage.setSubject("RESUME OF " + name);
         simpleMailMessage.setText(message + "\n" + email + "\n" + name);
