@@ -1,5 +1,6 @@
 package ru.viktorshiyan.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @JsonPropertyOrder({"yearStart", "yearFinish", "name", "position", "place", "description"})
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

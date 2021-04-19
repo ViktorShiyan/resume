@@ -40,6 +40,7 @@ public class ExperienceController implements CrudController<Experience> {
                     result.setPlace(body.getPlace());
                     result.setYearStart(body.getYearStart());
                     result.setYearFinish(body.getYearFinish());
+                    result.setPosition(body.getPosition());
                     return experinceRepository.save(result);
                 }).orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
