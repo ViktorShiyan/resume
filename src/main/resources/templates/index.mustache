@@ -396,47 +396,18 @@
 								<i class="fa fa-briefcase"></i>
 							</span>
                     <div class="all-experience">
-                        <!-- single experience -->
-                        <div class="experience-content">
-                            <span class="period-experience">Aug 2019 - Current</span>
-                            <h3 class="specialty-name">Full Stack Web Developer</h3>
-                            <h3 class="company-name">UpWork</h3>
-                            <p class="prg-experience">
-                                Software development, software testing, writing documentation.
-                                Comparison of software products. Deploy software on servers.
-                                Teamwork. CI / CD. Version Control Systems.
-                                Preferred technology stack Python/Django and JS/React.</p>
-                        </div>
-                        <!-- / single experience -->
+                        {{#experience}}
+                            <!-- single experience -->
+                            <div class="experience-content">
+                                <span class="period-experience">{{yearStart}} - {{yearFinish}}</span>
+                                <h3 class="specialty-name">{{name}}</h3>
+                                <h3 class="company-name">{{place}}</h3>
+                                <p class="prg-experience">
+                                    {{description}}</p>
+                            </div>
+                            <!-- / single experience -->
+                        {{/experience}}
 
-                        <!-- single experience -->
-                        <div class="experience-content">
-                            <span class="period-experience">May 2015 - Aug 2019</span>
-                            <h3 class="specialty-name">Software Engineer</h3>
-                            <h3 class="company-name">Freelance</h3>
-                            <p class="prg-experience">
-                                Software development, software testing, writing documentation.
-                                Comparison of software products. Deploy software on servers.
-                                Teamwork and work alone. CI / CD. Version Control Systems.
-                                Various programming languages ​​(Java, C #, JS, Python, PHP).</p>
-                        </div>
-                        <!-- / single experience -->
-
-                        <!-- single experience -->
-                        <div class="experience-content">
-                            <span class="period-experience">Oct 2012 - Current</span>
-                            <h3 class="specialty-name">Engineer ATSEP</h3>
-                            <h3 class="company-name">Airport "Talakan"</h3>
-                            <p class="prg-experience">
-                                Monitoring the display of information on the location and status of consumer navigation
-                                terminals.
-                                Restoration of navigation information systems in accordance with operational
-                                documentation.
-                                Setup and testing of hardware and software for navigation and information systems.
-                                Information recovery in databases of navigation and information systems from previously
-                                created backups.</p>
-                        </div>
-                        <!-- / single experience -->
                     </div>
                 </div>
             </div>

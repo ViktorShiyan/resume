@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ru.viktorshiyan.data.DataForHome;
 import ru.viktorshiyan.domain.Education;
+import ru.viktorshiyan.domain.Experience;
 import ru.viktorshiyan.repos.EducationRepository;
+import ru.viktorshiyan.repos.ExperinceRepository;
 
 import java.util.*;
 
@@ -19,6 +21,7 @@ public class HomeController {
     private final DataForHome dataForHome;
     private final JavaMailSender emailSender;
     private final EducationRepository educationRepository;
+    private final ExperinceRepository experinceRepository;
 
     @PostMapping(value = "message")
     public @ResponseBody
@@ -39,14 +42,18 @@ public class HomeController {
      * @param model map data for home
      * @return view
      */
-    @GetMapping
+    @GetMapping("/")
     public String main(Map<String, Object> model) {
         model.put("some", "MAIN");
         model.putAll(dataForHome.getDataMap());
         List<Education> educationList = new ArrayList<>();
         educationRepository.findAll().forEach(educationList::add);
+        List<Experience> experienceList = new ArrayList<>();
+        experinceRepository.findAll().forEach(experienceList::add);
         educationList.sort(Comparator.comparing(Education::getYearStart));
+        experienceList.sort(Comparator.comparing(Experience::getID));
         model.put("educations", educationList);
+        model.put("experience", experienceList);
         return "index";
     }
 
